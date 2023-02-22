@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
 export const Topbar = styled.div`
-    max-width: 1100px;
-    margin: 30px auto;
+    /* max-width: 1100px; */
+    margin: 0;
     padding: 10px;
-    border-radius: 50px;
-    background: #feee00;
+    background: #463443;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    color: #fff;
     .h-logo{
         position: relative;
         img{
-            height: 100px;
+            height: 73px;
             position: absolute;
-            bottom: -20px;
+            bottom: -54px;
         }
         h2{
             font-weight: 800;
@@ -31,7 +33,7 @@ export const Topbar = styled.div`
         align-items: center;
         li{
             a{
-                color: #000;
+                color: #fff;
                 font-size: 18px;
             }
             button{
@@ -47,12 +49,12 @@ export const Topbar = styled.div`
     }
 
     @media only screen and (max-width: 600px) { 
-        position: fixed;
-        bottom: 0;
-        left: 10px;
-        right: 10px;
-        z-index: 1;
-        margin-bottom: 10px;
+        /* position: fixed; */
+        /* bottom: 0; */
+        /* left: 10px; */
+        /* right: 10px; */
+        /* z-index: 1; */
+        /* margin-bottom: 10px; */
         h2 {
             display:none;
         }

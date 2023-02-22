@@ -5,13 +5,22 @@ import Navbar from '../components/navbar'
 import styles from '../styles/Home.module.css'
 import Itmes from './items'
 import Link from 'next/link'
-import { Container } from '../styles/styled/layout.styled';
+import { Container, ContainerFluid } from '../styles/styled/layout.styled';
 import { ItemGrid } from '../styles/styled/itemGrid.styled';
 import { motion } from 'framer-motion';
 import { FaRegHeart } from "react-icons/fa";
 import { BiHeartCircle } from "react-icons/bi";
 import { BiHeart } from "react-icons/bi";
 import { VscHeart } from "react-icons/vsc";
+import HomeBanner from '../components/home/homeBanner';
+// import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Blurb from '../components/blurb';
+
+
+//section images
 
 
 // export const getStaticProps = async () =>{
@@ -41,107 +50,116 @@ export default function Home() {
 
 
   // console.log(items);
-  const makeFavourite = async (id) =>{
+  const makeFavourite = async (id) => {
     setIsLoading(true)
     // console.log(id);
-    const res = await fetch('https://my-favourites-965fb-default-rtdb.firebaseio.com/items/'+id+'.json',{
-      method:'PATCH',
-      body:JSON.stringify({
+    const res = await fetch('https://my-favourites-965fb-default-rtdb.firebaseio.com/items/' + id + '.json', {
+      method: 'PATCH',
+      body: JSON.stringify({
         favourite: true,
       })
     })
-    .then(()=>{
-      setisFavourite(!isFavourite)
-    })
+      .then(() => {
+        setisFavourite(!isFavourite)
+      })
   }
-  const notFavourite = async (id) =>{
+  const notFavourite = async (id) => {
     setIsLoading(true)
     // console.log(id);
-    const res = await fetch('https://my-favourites-965fb-default-rtdb.firebaseio.com/items/'+id+'.json',{
-      method:'PATCH',
-      body:JSON.stringify({
+    const res = await fetch('https://my-favourites-965fb-default-rtdb.firebaseio.com/items/' + id + '.json', {
+      method: 'PATCH',
+      body: JSON.stringify({
         favourite: false,
       }),
     })
-    .then(()=>{
-      setisFavourite(!isFavourite)
-    })
+      .then(() => {
+        setisFavourite(!isFavourite)
+      })
   }
   const gridLoad = {
-    hidden: { opacity: 0, scale:0.8},
-    visible: i =>(
-        { 
-            opacity: 1,
-            scale:1,
-            transition:{
-                type: "easeIn",
-                delay: i * 0.08,
-            } 
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: i => (
+      {
+        opacity: 1,
+        scale: 1,
+        transition: {
+          type: "easeIn",
+          delay: i * 0.08,
         }
+      }
     )
   }
 
- 
+
 
 
 
   return (
-    <>  
-      <div className='banner-text'>
-        <h1>Choose Your <br></br> Character</h1>
-        <p>Add characters to your favourites list.</p>
-      </div> 
-        {/* {isLoading && <div className='loader'>Loading</div>} */}
-        {isLoading && <div className='loader'>
-          <div className='l-anim'>
-              <span> Loading... </span>
-          </div>
-        </div>}
-       
+    <>
+      {isLoading && <div className='loader'>
+        <div className='l-anim'>
+          <span> Loading... </span>
+        </div>
+      </div>}
 
 
+
+      <HomeBanner /><ContainerFluid>
+        <Row className='rm-px'>
+          <Col lg="6">
+            <Blurb bl_top="New to Arkadia" bl_Title="The Explores" bl_img='Images/s1_1.png' bl_desc="Learn how to join the theme park and start your adventure" />
+          </Col>
+          <Col lg="6">
+            <Blurb bl_top="New to Arkadia" bl_Title="Enter the portal" bl_img='Images/s1_2.png' bl_desc="Learn how to join the theme park and start your adventure" />
+          </Col>
+        </Row>
+      </ContainerFluid>
+      {/* <Container>
         <ItemGrid className='items'>
-          {     items &&
-                items.map((item,i)=>(
-                  <motion.div 
-                    custom={i}
-                    initial="hidden"
-                    animate="visible"
-                    variants={gridLoad}
-                    className='item' key={item.id}>
-                      <div className="character">
-                        <motion.img 
-                          initial={{
-                            borderRadius: '100%'
-                          }}
-                          whileHover={{
-                            borderRadius: ["100%", "10%"],
-                            scale: 0.9,
-                            rotate: [0, 0, 5, -5, 0, 0],
-                          }}
-                        src={item.image} />
-                        <h3>{item.name}</h3>
-                        {
-                          item.favourite ? <motion.button
-                            whileTap={{ scale: 0.8 }}
-                            whileHover={{scale:1.1}}
-                          className='btn-fav-not' onClick={()=>notFavourite(item.id)}> 
-                          <BiHeart/>
-                            
+          {items &&
+            items.map((item, i) => (
+              <motion.div
+                custom={i}
+                initial="hidden"
+                animate="visible"
+                variants={gridLoad}
+                className='item' key={item.id}>
+                <div className="character">
+                  <motion.img
+                    initial={{
+                      borderRadius: '100%'
+                    }}
+                    whileHover={{
+                      borderRadius: ["100%", "10%"],
+                      scale: 0.9,
+                      rotate: [0, 0, 5, -5, 0, 0],
+                    }}
+                    src={item.image} />
+                  <h3>{item.name}</h3>
+                  {
+                    item.favourite ? <motion.button
+                      whileTap={{ scale: 0.8 }}
+                      whileHover={{ scale: 1.1 }}
+                      className='btn-fav-not' onClick={() => notFavourite(item.id)}>
+                      <BiHeart />
 
-                          </motion.button> :
-                          <motion.button
-                            whileTap={{ scale: 0.8 }}
-                            whileHover={{scale:1.1}}
-                          className='btn-fav' onClick={()=>makeFavourite(item.id)}>
-                          <BiHeart/>
-                          </motion.button>
-                        }
-                      </div>
-                  </motion.div>
-                ))
-            }
+
+                    </motion.button> :
+                      <motion.button
+                        whileTap={{ scale: 0.8 }}
+                        whileHover={{ scale: 1.1 }}
+                        className='btn-fav' onClick={() => makeFavourite(item.id)}>
+                        <BiHeart />
+                      </motion.button>
+                  }
+                </div>
+              </motion.div>
+            ))
+          }
         </ItemGrid>
+      </Container> */}
+
+
     </>
   )
 }

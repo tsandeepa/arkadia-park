@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
     body{
-        background-color:${({theme})=> theme.bg};
-        color: ${({theme})=>theme.textColor};
+        /* background-color:${({ theme }) => theme.bg}; */
+        background-color: #2D242D;
+        color: ${({ theme }) => theme.textColor};
         margin-bottom: 40px;
     }
     .loader{
@@ -41,7 +42,7 @@ const GlobalStyles = createGlobalStyle`
     background: transparent;        /* color of the tracking area */
     }
     body::-webkit-scrollbar-thumb {
-    background-color: ${({theme})=> theme.scrollColor};   /* color of the scroll thumb */
+    background-color: ${({ theme }) => theme.scrollColor};   /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     }
     .banner-text{
@@ -57,6 +58,33 @@ const GlobalStyles = createGlobalStyle`
             color: #b1b1b1;
         }
     }
+
+    .rm-px{
+        >div{
+            padding: 0;
+        }
+    }
+
+    .btn{
+        border: 0;
+        padding: 15px 38px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #fff;
+
+    }
+
+    .bt-primary{
+        background: #2D242D;
+        border: 1px solid #fff5;
+
+    }
+
+    .bt-light{
+        background: transparent;
+        border: 1px solid #fff;
+    }
+
 
     @media only screen and (max-width: 600px) { 
         .banner-text{
