@@ -11,19 +11,18 @@ const HomeBanner = () => {
       </video>
       <div className="banner-overlay">
         <Container>
-          <h2>Join the Arkadia theme park <br /> Now</h2>
+          <h2>
+            Join the Arkadia <br />
+            theme park Now
+          </h2>
           <div className="banner-overlay__bt-group">
-            <button className="btn bt-primary">
-              LEARN MORE
-            </button>
-            <button className="btn bt-light">
-              PLAY NOW
-            </button>
+            <button className="btn bt-primary">LEARN MORE</button>
+            <button className="btn bt-light">PLAY NOW</button>
           </div>
         </Container>
       </div>
     </BannerStyled>
   );
-}
+};
 
 export default HomeBanner;

@@ -2,25 +2,26 @@ import styled from "styled-components";
 
 export const BlurbStyled = styled.div`
   border: 1px solid #463443;
-  img{
+  img {
     width: 100%;
     display: block;
-    max-height: 425px;
+    max-height: 420px;
+    object-fit: cover;
   }
-  >div{
+  > div {
     padding: 60px;
     text-align: center;
   }
-  h5{
-    color: #C7AD7B;
+  h5 {
+    color: #c7ad7b;
   }
-  h3{
-    color: #FFA800;
+  h3 {
+    color: #ffa800;
     font-weight: 700;
     font-size: 44px;
   }
-  p{
-    color: #C7AD7B;
+  p {
+    color: #c7ad7b;
     font-size: 20px;
   }
-`
+`;

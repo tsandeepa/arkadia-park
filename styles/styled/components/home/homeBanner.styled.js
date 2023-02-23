@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const BannerStyled = styled.div`
   position: relative;
-  video{
+  video {
     width: 100%;
     max-height: 80vh;
     object-fit: cover;
     display: block;
   }
-  .banner-overlay{
+  .banner-overlay {
     position: absolute;
     top: 0;
     padding: 80px 0;
@@ -16,19 +16,20 @@ export const BannerStyled = styled.div`
     max-height: 80vh;
     width: 100%;
     left: 0;
-    >div{
+    > div {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
     }
 
-    h2{
+    h2 {
       font-size: 55px;
+      font-weight: 800;
     }
-    &__bt-group{
+    &__bt-group {
       display: flex;
       gap: 20px;
     }
   }
-`
+`;
