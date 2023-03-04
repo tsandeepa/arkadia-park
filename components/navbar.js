@@ -29,6 +29,9 @@ const Navbar = ({ handleTheme }) => {
           <Link href="/">
             <a>Home</a>
           </Link>
+          <Link href="/communities">
+            <a>Communities</a>
+          </Link>
         </motion.li>
         {/* <motion.li whileHover={{ scale: 1.05 }}>
           <Link href="/favourites">
