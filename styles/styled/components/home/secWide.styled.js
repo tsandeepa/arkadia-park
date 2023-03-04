@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 export const WideSecStyled = styled.div`
   padding-left: calc((100% - 1220px) / 2);
-  overflow: hidden;
+  /* overflow: hidden; */
+  min-height: 335px;
+  display: flex;
+  >div{
+    display: flex;
+  }
   .sec-desc {
     display: flex;
     flex-direction: column;
@@ -19,10 +24,15 @@ export const WideSecStyled = styled.div`
       opacity: 0.7;
     }
   }
-
-  img {
-    width: 100%;
-    max-height: 420px;
-    object-fit: cover;
+  .sec-img{
+    position: relative;
+    img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: contain;
+      position: absolute;
+      bottom: 0;
+    }
   }
+
 `;

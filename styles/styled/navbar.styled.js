@@ -11,6 +11,7 @@ export const Topbar = styled.div`
   position: relative;
   z-index: 1;
   color: #fff;
+  height: 70px;
   .h-logo {
     position: relative;
     img {
@@ -31,6 +32,7 @@ export const Topbar = styled.div`
     display: flex;
     gap: 20px;
     align-items: center;
+    margin-bottom: 0;
     li {
       a {
         color: #fff;

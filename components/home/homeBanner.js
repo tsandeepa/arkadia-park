@@ -6,14 +6,14 @@ const HomeBanner = () => {
   return (
     <BannerStyled>
       <video autoPlay playsInline muted loop={true}>
-        <source src="videos/shot1.mp4" type="video/mp4"></source>
+        <source src="videos/banner.mp4" type="video/mp4"></source>
         {/* <source src="https://youtu.be/Pj3MGAlcfyo" type="video/mp4"></source> */}
       </video>
       <div className="banner-overlay">
         <Container>
           <h2>
-            Join the Arkadia <br />
-            theme park Now
+            Join the Arkadia
+            theme<br /> park Now
           </h2>
           <div className="banner-overlay__bt-group">
             <button className="btn bt-primary">LEARN MORE</button>

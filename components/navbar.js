@@ -29,15 +29,12 @@ const Navbar = ({ handleTheme }) => {
           <Link href="/">
             <a>Home</a>
           </Link>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.05 }}>
           <Link href="/communities">
             <a>Communities</a>
           </Link>
         </motion.li>
-        {/* <motion.li whileHover={{ scale: 1.05 }}>
-          <Link href="/favourites">
-            <a>Favourites</a>
-          </Link>
-        </motion.li> */}
         <motion.li whileHover={{ scale: 1.05 }}>
           {/* <motion.button whileTap={{ scale: 0.8 }} onClick={() => handleTheme()}><BiAdjust /></motion.button> */}
         </motion.li>

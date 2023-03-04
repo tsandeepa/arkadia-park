@@ -16,7 +16,6 @@ import HomeBanner from "../components/home/homeBanner";
 // import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Blurb from "../components/blurb";
 import SectionWide from "../components/home/secWide";
 
@@ -52,8 +51,8 @@ export default function Home() {
     // console.log(id);
     const res = await fetch(
       "https://my-favourites-965fb-default-rtdb.firebaseio.com/items/" +
-        id +
-        ".json",
+      id +
+      ".json",
       {
         method: "PATCH",
         body: JSON.stringify({
@@ -69,8 +68,8 @@ export default function Home() {
     // console.log(id);
     const res = await fetch(
       "https://my-favourites-965fb-default-rtdb.firebaseio.com/items/" +
-        id +
-        ".json",
+      id +
+      ".json",
       {
         method: "PATCH",
         body: JSON.stringify({
@@ -171,6 +170,7 @@ export default function Home() {
           scale: [1, 1.01, 1.02, 1, 1],
           // rotate: [0, 0, 20, -20, 0],
         }}
+        sec_overflow_hidden={true}
         sec_transition={{
           duration: 12,
           ease: "easeInOut",

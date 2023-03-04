@@ -11,6 +11,7 @@ const SectionWide = ({
   sec_img,
   sec_animate,
   sec_transition,
+  sec_overflow_hidden
 }) => {
   console.log(sec_bg);
   return (
@@ -21,9 +22,9 @@ const SectionWide = ({
             <h3>{sec_title}</h3>
             <p>{sec_desc}</p>
             <button className="btn bt-primary">{Sec_btn_text}</button>
-            <p>{}</p>
+            <p>{ }</p>
           </Col>
-          <Col lg="6">
+          <Col lg="6" className="sec-img">
             <motion.img
               src={sec_img}
               alt=""
