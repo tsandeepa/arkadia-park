@@ -85,6 +85,20 @@ const GlobalStyles = createGlobalStyle`
         border: 1px solid #fff;
     }
 
+    .sec-ov-hiden{
+        overflow: hidden;
+        .sec-img{
+            img{
+                position: relative;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .row-reverse{
+        flex-direction: row-reverse;
+    }
+
 
     @media only screen and (max-width: 600px) { 
         .banner-text{

@@ -185,6 +185,7 @@ export default function Home() {
         Sec_btn_text="learn More"
         sec_bg={secBgs[2]}
         sec_img="Images/sec-3.png"
+        sec_overflow_hidden={true}
         sec_animate={{
           scale: [1, 1.01, 1.02, 1, 1],
           // rotate: [0, 0, 20, -20, 0],

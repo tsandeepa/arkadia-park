@@ -11,13 +11,15 @@ const SectionWide = ({
   sec_img,
   sec_animate,
   sec_transition,
-  sec_overflow_hidden
+  sec_overflow_hidden,
+  sec_reverse
+
 }) => {
   console.log(sec_bg);
   return (
-    <WideSecStyled style={{ background: sec_bg.background }}>
+    <WideSecStyled className={sec_overflow_hidden ? 'sec-ov-hiden' : ''} style={{ background: sec_bg.background }}>
       <ContainerFluid>
-        <Row className="rm-px">
+        <Row className={`rm-px ${sec_reverse ? 'row-reverse' : ''}`}>
           <Col lg="6" className="sec-desc">
             <h3>{sec_title}</h3>
             <p>{sec_desc}</p>
