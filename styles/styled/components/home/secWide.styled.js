@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const WideSecStyled = styled.div`
   padding-left: calc((100% - 1220px) / 2);
   /* overflow: hidden; */
-  min-height: 335px;
+  min-height: 366px;
   display: flex;
   >div{
     display: flex;
